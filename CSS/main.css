@@ -1,0 +1,223 @@
+/*Variablendeklarationen------------------------------------------------------*/
+:root {
+    --farbe1: #004d00;
+    --farbe2: #00cc00;
+    --farbe3: white;
+    --farbe4: black;
+    --farbe5: grey;
+    --farbe6: lightgrey;
+    --smallFont: 8px;
+    --normalFont: 12px;
+    --largeFont: 16px;
+    --veryLargeFont: 24px;
+}
+/*----------------------------------------------------------------------------*/
+
+
+/*Bady------------------------------------------------------------------------*/
+body {
+    margin: 0;
+}
+body > header {
+    min-height: 20px;
+    max-height: 100px;
+    background-image: url("http://img.webme.com/pic/m/mek-testside/header5.jpg");
+}
+/*----------------------------------------------------------------------------*/
+
+
+/*Navigation------------------------------------------------------------------*/
+nav.horizontal {
+    background-color: var(--farbe1);
+    display: inline-block;
+    width: 100%;
+    box-shadow: -1px 3px 6px grey;
+}
+nav.horizontal a{
+    float: left;
+    position: relative;
+    font-weight: bold;
+    color: var(--farbe2);
+    text-align: center;
+    padding: 16px;
+    border-right: 1px solid var(--farbe3);
+    text-decoration: none;
+}
+nav.horizontal a.active{
+    background-color: var(--farbe4);
+}
+nav.horizontal a:last-child {
+    float: right;
+    border-right: none;
+}
+/*Folgendes positioniert kleine Pfeile an die Navigationselemente; content,
+damit was bebordert werden kann, absolute positionierung (parent muss meine ich
+relativ sein), danach die Positionierung des Objektes. Margin left , weils sonst
+nicht mittig liegt, da die linke obere Kante gezählt wird.die Borderdarstellung
+sorgt für ein Dreieck...siehe Internet warum. Ist easy.*/
+nav.horizontal a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    margin-left: -7px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: var(--farbe4) transparent transparent transparent;
+}
+nav.horizontal a:hover:not(.active) {
+    background-color: var(--farbe2);
+    color: var(--farbe1);
+    -webkit-transition: background-color 400ms linear;
+    -moz-transition: background-color 400ms linear;
+    -o-transition: background-color 400ms linear;
+    -ms-transition: background-color 400ms linear;
+    transition: background-color 400ms linear;
+}
+
+@media (max-width:470px){
+    nav.horizontal {
+        display: block;
+        background-color: var(--farbe1);
+    }
+    nav.horizontal a {
+        display: block;
+        float:none;
+        border-right: none;
+        border-bottom: 1px solid var(--farbe3);
+    }
+    nav.horizontal a:last-child {
+        float: none;
+        border-bottom: none;
+    }
+    nav.horizontal a.active::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -7px;
+        border-width: 7px;
+        border-style: solid;
+        border-color: transparent transparent var(--farbe1) transparent;
+    }
+}
+/*----------------------------------------------------------------------------*/
+
+
+/*Listenklassen---------------------------------------------------------------*/
+/*Die ganzen Block-Sachen mache ich, damit das mit dem fitting ans
+Parentelement funktioniert*/
+ul.gallery1 {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 0;
+    width: 98%;
+    list-style-type: none;
+}
+ul.gallery1 li{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    flex: 1 0 auto;
+    float: left;
+    padding: 8px;
+    width: 25%;
+}
+ul.gallery1 img{
+    display: block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 2px solid var(--farbe5);
+    width: 100%;
+    height: 100%;
+}
+ul.gallery1 img:hover{
+    border: 2px solid var(--farbe4);
+}
+@media screen and ( max-width: 800px ){
+    ul.gallery1 li{
+        width: 33.333%;
+    }
+}
+@media screen and ( max-width: 640px ){
+    ul.gallery1 li{
+        width: 50%;
+    }
+}
+@media screen and ( max-width: 400px ){
+    ul.gallery1 li{
+        width: 100%;
+        float: none;
+    }
+}
+/*----------------------------------------------------------------------------*/
+
+
+/*Tabledesigns----------------------------------------------------------------*/
+table.simpleTable {
+    border: 2px solid var(--farbe4);
+    border-collapse: collapse;
+}
+table.simpleTable caption {
+    font-size: var(--largeFont);
+    font-weight: bold;
+}
+table.simpleTable thead {
+    border-bottom: 2px solid var(--farbe4);
+}
+table.simpleTable tr:nth-child(even){
+    background-color: var(--farbe6);
+}
+table.simpleTable tbody tr:nth-child(odd) {
+    background-color: var(--farbe5);
+}
+table.simpleTable th,
+table.simpleTable td {
+    padding: 5px 7px;
+    border-bottom: 1px solid var(--farbe4);
+    border-right: 1px solid var(--farbe4);
+}
+/*----------------------------------------------------------------------------*/
+
+
+/*Aside-Designs----------------------------------------------------------------*/
+aside.rightSide {
+    float: right;
+    margin-right: 16px;
+    max-width: 250px;
+}
+/*----------------------------------------------------------------------------*/
+
+
+/*Verschiedenes---------------------------------------------------------------*/
+.cleared {
+    clear: both;
+}
+a.headjumper {
+    position: fixed;
+    bottom: 0;
+    padding: 8px 8px;
+    left:17px;
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--farbe4);
+    color: var(--farbe3);
+    border-left: 3px solid var(--farbe4);
+    border-right: 3px solid var(--farbe4);
+    border-top: 3px solid var(--farbe4);
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+/*----------------------------------------------------------------------------*/
