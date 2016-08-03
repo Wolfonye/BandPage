@@ -23,6 +23,11 @@
             <a href="gaestebuch.html">Gästebuch</a>
             <a href="kontakt.html">Kontakt</a>
         </nav>
+        <!--Ich hab das mal mit nem article-tag versehen, der diese sections umspannt,
+        alles unter dem titel "über uns". h2 headline zweitwichtigsten Gerades.
+        Wenn du einen zusammenhängenden Text schreiben möchtest, dann ist es vermutlich sinnig
+        das innerhalb eines <p> TEXT </p> zu schreiben (paragraph). Zum Bleistift
+        unter dem "die Band"-header-->
         <article class="">
             <header>
                 <h2>Über uns</h2>
@@ -37,6 +42,11 @@
                 <header>
                     <h3>Repertoire</h3>
                 </header>
+                <!--Hier kommt eine Table: caption erklärt sich von selbst; thead markiert den head-bereich des Tables
+                ; immer dran denken: semantisches markup; das tut erstmal nix außer das als Kopf zu markieren.
+                tr=table-row, sprich neue Zeile aufmachen. th für ein tablehead-element. Zwei th's innerhalb
+                eines tr-tags (<tr> gedöns <tr/>) würden also zwei Spalten erzeugen. tbody erklärt sich jetzt wohl
+                von selbst.-->
                 <table class="simpleTable" summary="Eine Übersicht über unser Repertoire">
                     <caption>Eine Übersicht über unser Repertoire</caption>
                     <thead>
