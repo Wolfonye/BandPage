@@ -1,7 +1,7 @@
 ﻿/*Variablendeklarationen------------------------------------------------------*/
 :root {
-    --farbe1: #004d00;
-    --farbe2: #00cc00;
+    --farbe1: #004d00; <!--Maincolor DUNKEL-->
+    --farbe2: #00cc00; <!--Maincolor HELL-->
     --farbe3: white;
     --farbe4: black;
     --farbe5: grey;
