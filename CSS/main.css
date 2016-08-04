@@ -75,14 +75,14 @@ nav.horizontal a:hover:not(.active) {
     transition: background-color 400ms linear;
 }
 
-@media (max-width:470px){
+@media (max-width:460px){
     nav.horizontal {
         display: block;
         background-color: var(--farbe1);
     }
     nav.horizontal a {
         display: block;
-	padding: 12px;
+	      padding: 5px 12px;
         float:none;
         border-right: none;
         border-bottom: 1px solid var(--farbe3);
@@ -157,7 +157,7 @@ ul.gallery1 img:hover{
         width: 50%;
     }
 }
-@media screen and ( max-width: 400px ){
+@media screen and ( max-width: 460px ){
     ul.gallery1 li{
         width: 100%;
         float: none;
@@ -199,8 +199,20 @@ aside.rightSide {
     margin-right: 16px;
     max-width: 250px;
 }
+aside.leftSide {
+  float: left;
+  margin-left: 16px;
+  max-width: 250px;
+}
 /*----------------------------------------------------------------------------*/
 
+
+/*Footer-Designs--------------------------------------------------------------*/
+footer.bottom {
+  display: table;
+  vertical-align: bottom;
+}
+/*----------------------------------------------------------------------------*/
 
 /*Verschiedenes---------------------------------------------------------------*/
 .cleared {
@@ -220,5 +232,12 @@ a.headjumper {
     border-top: 3px solid var(--farbe4);
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
+}
+
+@media screen and ( max-width: 460px ) {
+  a.headjumper {
+    padding: 3px 4px;
+    left: 5px;
+  }
 }
 /*----------------------------------------------------------------------------*/
