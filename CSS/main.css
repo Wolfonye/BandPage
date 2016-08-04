@@ -17,6 +17,7 @@
 /*Body------------------------------------------------------------------------*/
 body {
     margin: 0;
+    height: 100%;
 }
 body > header {
     min-height: 20px;
@@ -198,19 +199,25 @@ aside.rightSide {
     float: right;
     margin-right: 16px;
     max-width: 250px;
+    border: 1px solid var(--farbe4);
 }
 aside.leftSide {
-  float: left;
-  margin-left: 16px;
-  max-width: 250px;
+    float: left;
+    margin-left: 16px;
+    max-width: 250px;
+    border: 1px solid var(--farbe4);
 }
 /*----------------------------------------------------------------------------*/
 
 
 /*Footer-Designs--------------------------------------------------------------*/
 footer.bottom {
-  display: table;
-  vertical-align: bottom;
+  position: fixed;
+  box-sizing: border-box;     /*kann später raus, aber hier lernt man was; nötig, damit der overflow nicht den rechten boxrand verdeckt*/
+  bottom: 0;
+  text-align: center;
+  border: 1px solid black;
+  width: 100%;
 }
 /*----------------------------------------------------------------------------*/
 
