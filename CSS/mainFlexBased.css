@@ -270,13 +270,14 @@ table.simpleTable td {
 /*----------------------------------------------------------------------------*/
 
 
-/*Verschiedenes---------------------------------------------------------------*/
+/*****************************Verschiedenes************************************/
 .cleared {
     clear: both;
 }
-a.headjumper {
+.headjumper {
     position: fixed;
     bottom: 0;
+    visibility: hidden;
     padding: 8px 8px;
     left:17px;
     text-decoration: none;
@@ -288,13 +289,31 @@ a.headjumper {
     border-top: 3px solid var(--farbe4);
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
+    -webkit-transition: opacity 400ms linear;
+    -moz-transition: opacity 400ms linear;
+    -o-transition: opacity 400ms linear;
+    -ms-transition: opacity 400ms linear;
+    transition: opacity 400ms linear;
 }
-
+.headjumper.isVisible{
+    visibility: visible;
+}
+.headjumper.lowOp {
+    opacity: 0.35;
+}
+.headjumper.lowOp:hover{
+    opacity: 1;
+    -webkit-transition: opacity 400ms linear;
+    -moz-transition: opacity 400ms linear;
+    -o-transition: opacity 400ms linear;
+    -ms-transition: opacity 400ms linear;
+    transition: opacity 400ms linear;
+}
 @media screen and ( max-width: 460px ) {
   a.headjumper {
     padding: 3px 4px;
     left: 5px;
   }
 }
-/*----------------------------------------------------------------------------*/
+/******************************************************************************/
 /*############################################################################*/
