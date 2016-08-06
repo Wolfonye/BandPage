@@ -4,11 +4,11 @@
         <meta charset="utf-8"/>  <!--diese Metaangabe sollte immer als erste im Head stehen-->
         <meta name="Autor" content="Philipp Bous"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
-        <!--viewpor Angabe wegen: https://wiki.selfhtml.org/wiki/Meta; irgenwann wird das über CSS laufen!!!-->
+        <!--viewport Angabe wegen: https://wiki.selfhtml.org/wiki/Meta; irgenwann wird das über CSS laufen!!!-->
         <meta name="description" content="Mediensammlung der Band: Bilder, Videos und Sounddateien."/>
         <meta name="keywords" lang="de" content="Band, Hochzeitsband, Bilder, Videos, Musik, Sound"/><!--cool, mehrere metas für verschiedene Sprachen möglich-->
         <meta name="format-detection" content="telephone=yes"/> <!--automatische anklickbarkeit von telefonnummern zum dialing auf handies-->
-        <link rel="stylesheet" href="CSS/main.css"/>
+        <link rel="stylesheet" href="CSS/mainFlexBased.css"/>
         <!--Favicon einfügen-->
         <title>Tierische Band</title>
     </head>
@@ -29,41 +29,43 @@
         <nav class="horizontal">
             <a href="home.html">Startseite</a>
             <a href="info.html">Über uns</a>
-            <a class="active"href="medien.html">Medien</a>
+            <a class="active" href="medien.html">Medien</a>
             <a href="gaestebuch.html">Gästebuch</a>
             <a href="kontakt.html">Kontakt</a>
         </nav>
-        <article class="">
-            <header>
-                <h2>Medien</h2>
-            </header>
-            <section>
+        <div class="mittelsektion">
+            <article class="">
                 <header>
-                    <h3>Bilder</h3>
+                    <h2>Medien</h2>
                 </header>
-                <ul class="gallery1">
-                    <li><a href="src/music-1.jpg"><img src="src/music-1.jpg" alt="Ein Strand" /></a></li>
-                    <li><a href="src/music-2.jpg"><img src="src/music-2.jpg" alt="Inkastadt" /></a></li>
-                    <li><a href="src/music-3.jpg"><img src="src/music-3.jpg" alt="Overwatch Artwork" /></a></li>
-                    <li><a href="src/music-4.jpg"><img src="src/music-4.jpg" alt="Eine Kampfesschnitte" /></a></li>
-                </ul>
-            </section>
-            <section class="cleared">
-                <header>
-                    <h3>Videos</h3>
-                </header>
+                <section>
+                    <header>
+                        <h3>Bilder</h3>
+                    </header>
+                    <ul class="gallery1">
+                        <li><a href="src/music-1.jpg"><img src="src/music-1.jpg" alt="Ein Strand" /></a></li>
+                        <li><a href="src/music-2.jpg"><img src="src/music-2.jpg" alt="Inkastadt" /></a></li>
+                        <li><a href="src/music-3.jpg"><img src="src/music-3.jpg" alt="Overwatch Artwork" /></a></li>
+                        <li><a href="src/music-4.jpg"><img src="src/music-4.jpg" alt="Eine Kampfesschnitte" /></a></li>
+                    </ul>
+                </section>
+                <section>
+                    <header>
+                        <h3>Videos</h3>
+                    </header>
 
-            </section>
-            <section>
-                <header>
-                    <h3>Tonaufnahmen</h3>
-                </header>
+                </section>
+                <section>
+                    <header>
+                        <h3>Tonaufnahmen</h3>
+                    </header>
 
-            </section>
-        </article>
-        <aside class="">
+                </section>
+            </article>
+            <aside class="right">
 
-        </aside>
+            </aside>
+        </div>
         <footer>
                 <small>Design/Administration: Philipp Bous, &copy; via <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CreativeCommons-Lizensierung</a>, Page zuletzt aktualisiert am: 04.08.2016.</small>
         </footer>

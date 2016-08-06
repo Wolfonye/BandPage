@@ -1,37 +1,54 @@
+/*########################Variablendeklarationen##############################*/
+:root {
+    --farbe1: #004d00; /*Hauptfarbe DUNKEL*/
+    --farbe2: #00cc00; /*Haubtfarbe HELL*/
+    --farbe3: white;
+    --farbe4: black;
+    --farbe5: grey;
+    --farbe6: lightgrey;
+    --smallFont: 8px;
+    --normalFont: 12px;
+    --largeFont: 16px;
+    --veryLargeFont: 24px;
+}
+/*############################################################################*/
+
+/*##############################Basislayout###################################*/
 body > header:first-of-type {
     box-sizing: border-box;
     background-color: green;
-    min-height: 50px;
 }
 nav {
     box-sizing: border-box;
-    background-color: lightblue;
+    background-color: var(--farbe1);
     min-height: 30px;
 }
 div.mittelsektion {
-    box-sizing: border-box;
-    background-color: orange;
     display: flex;
+    position: relative;
+    box-sizing: border-box;
     flex-grow: 1;
     flex-direction: row;
 }
 article {
-    display: flex;
-    justify-content: center;
     box-sizing: border-box;
-    background-color: red;
     flex-grow: 1;
+    background-color: red;
 }
 aside {
     box-sizing: border-box;
     background-color: yellow;
 }
 aside.right {
+    position: relative;
+    z-index: -1;
     margin-left: auto;
     padding: 16px;
     flex-basis: 20%;
 }
 aside.left {
+    position: relative;
+    z-index: -1;
     margin-right: auto;
     padding: 16px;
     flex-basis: 20%;
@@ -40,7 +57,8 @@ footer {
     display: flex;
     justify-content: center;
     box-sizing: border-box;
-    background-color: blue;
+    padding: 8px;
+    border-top: 1px solid var(--farbe4);
     margin-top: auto;
 }
 html {
@@ -52,3 +70,231 @@ body {
     display: flex;
     flex-direction: column;
 }
+.left {
+    margin-right: auto;
+    padding: 16px;
+}
+.right {
+    margin-left: auto;
+    padding: 16px;
+}
+@media (max-width: 460px) {
+    div.mittelsektion {
+        flex-direction: column;
+    }
+    aside.right {
+        margin-left: inherit;
+        margin-top: auto;
+    }
+}
+/*----------------------------------------------------------------------------*/
+/*############################################################################*/
+
+
+/*###########################Spezialisierungen################################*/
+/*body------------------------------------------------------------------------*/
+body > header {
+    min-height: 20px;
+    max-height: 100px;
+    background-image: url("http://img.webme.com/pic/m/mek-testside/header5.jpg");
+}
+/*----------------------------------------------------------------------------*/
+
+
+/*Navigation------------------------------------------------------------------*/
+nav.horizontal {
+    position: relative;
+    z-index: 20;
+    background-color: var(--farbe1);
+    display: flex;
+    width: 100%;
+    flex-shrink: 0;
+    box-shadow: -1px 3px 6px grey;
+}
+nav.horizontal a{
+    position: relative;
+    font-weight: bold;
+    color: var(--farbe2);
+    text-align: center;
+    padding: 16px;
+    border-right: 1px solid var(--farbe3);
+    text-decoration: none;
+}
+nav.horizontal a.active{
+    background-color: var(--farbe4);
+}
+nav.horizontal a:last-child {
+    margin-left: auto;
+    border-right: none;
+}
+/*Folgendes positioniert kleine Pfeile an die Navigationselemente; content,
+damit was bebordert werden kann, absolute positionierung (parent muss meine ich
+relativ sein), danach die Positionierung des Objektes. Margin left , weils sonst
+nicht mittig liegt, da die linke obere Kante gezählt wird.die Borderdarstellung
+sorgt für ein Dreieck...siehe Internet warum. Ist easy.*/
+nav.horizontal a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    margin-left: -7px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: var(--farbe4) transparent transparent transparent;
+}
+nav.horizontal a:hover:not(.active) {
+    background-color: var(--farbe2);
+    color: var(--farbe1);
+    -webkit-transition: background-color 400ms linear;
+    -moz-transition: background-color 400ms linear;
+    -o-transition: background-color 400ms linear;
+    -ms-transition: background-color 400ms linear;
+    transition: background-color 400ms linear;
+}
+@media (max-width:460px){
+    nav.horizontal {
+        flex-direction: column;
+        background-color: var(--farbe1);
+    }
+    nav.horizontal a {
+	    padding: 5px 12px;
+        border-right: none;
+        border-bottom: 1px solid var(--farbe3);
+    }
+    nav.horizontal a:last-child {
+        margin-left: inherit;
+        border-bottom: none;
+    }
+    nav.horizontal a.active::after {
+        content: none;
+        /*content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -7px;
+        border-width: 7px;
+        border-style: solid;
+        border-color: transparent transparent var(--farbe1) transparent;*/
+    }
+}
+/*----------------------------------------------------------------------------*/
+
+
+
+/*Listenklassen---------------------------------------------------------------*/
+/*Die ganzen Block-Sachen mache ich, damit das mit dem fitting ans
+Parentelement funktioniert*/
+ul.gallery1 {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+}
+ul.gallery1 li{
+    position: relative;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    flex: 1 0 auto;
+    padding: 8px;
+    width: 25%;
+}
+ul.gallery1 img{
+    position: relative;
+    display: block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 2px solid var(--farbe5);
+    width: 100%;
+    height: 100%;
+}
+ul.gallery1 img:hover{
+    border: 2px solid var(--farbe4);
+}
+@media screen and ( max-width: 800px ){
+    ul.gallery1 li{
+        width: 33.333%;
+    }
+}
+@media screen and ( max-width: 640px ){
+    ul.gallery1 li{
+        width: 50%;
+    }
+}
+@media screen and ( max-width: 460px ){
+    ul.gallery1 li{
+        width: 100%;
+        float: none;
+    }
+}
+/*----------------------------------------------------------------------------*/
+
+
+/*Tabledesigns----------------------------------------------------------------*/
+table.simpleTable {
+    border: 2px solid var(--farbe4);
+    border-collapse: collapse;
+}
+table.simpleTable caption {
+    font-size: var(--largeFont);
+    font-weight: bold;
+}
+table.simpleTable thead {
+    border-bottom: 2px solid var(--farbe4);
+}
+table.simpleTable tr:nth-child(even){
+    background-color: var(--farbe6);
+}
+table.simpleTable tbody tr:nth-child(odd) {
+    background-color: var(--farbe5);
+}
+table.simpleTable th,
+table.simpleTable td {
+    padding: 5px 7px;
+    border-bottom: 1px solid var(--farbe4);
+    border-right: 1px solid var(--farbe4);
+}
+/*----------------------------------------------------------------------------*/
+
+
+/*Verschiedenes---------------------------------------------------------------*/
+.cleared {
+    clear: both;
+}
+a.headjumper {
+    position: fixed;
+    bottom: 0;
+    padding: 8px 8px;
+    left:17px;
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--farbe4);
+    color: var(--farbe3);
+    border-left: 3px solid var(--farbe4);
+    border-right: 3px solid var(--farbe4);
+    border-top: 3px solid var(--farbe4);
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+@media screen and ( max-width: 460px ) {
+  a.headjumper {
+    padding: 3px 4px;
+    left: 5px;
+  }
+}
+/*----------------------------------------------------------------------------*/
+/*############################################################################*/
