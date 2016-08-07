@@ -1,3 +1,5 @@
+/*-------------ZULETZT GEÄNDERT AM 07.08.2016---------------------------------*/
+
 /*########################Variablendeklarationen##############################*/
 :root {
     --farbe1: #004d00; /*Hauptfarbe DUNKEL*/
@@ -220,9 +222,19 @@ ul.gallery1 img{
     border: 2px solid var(--farbe5);
     width: 100%;
     height: 100%;
+    -webkit-transition: border-color .6s 0s;
+    -moz-transition: border-color .6s 0s;
+    -o-transition: border-color .6s 0s;
+    -ms-transition: border-color .6s 0s;
+    transition: border-color .6s 0s;
 }
 ul.gallery1 img:hover{
     border: 2px solid var(--farbe4);
+    -webkit-transition: border-color .6s 0s;
+    -moz-transition: border-color .6s 0s;
+    -o-transition: border-color .6s 0s;
+    -ms-transition: border-color .6s 0s;
+    transition: border-color .6s 0s;
 }
 @media screen and ( max-width: 800px ){
     ul.gallery1 li{
@@ -278,6 +290,7 @@ table.simpleTable td {
     position: fixed;
     bottom: 0;
     visibility: hidden;
+    opacity: 0;
     padding: 8px 8px;
     left:17px;
     text-decoration: none;
@@ -289,25 +302,26 @@ table.simpleTable td {
     border-top: 3px solid var(--farbe4);
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
-    -webkit-transition: opacity 400ms linear;
-    -moz-transition: opacity 400ms linear;
-    -o-transition: opacity 400ms linear;
-    -ms-transition: opacity 400ms linear;
-    transition: opacity 400ms linear;
+    opacity: 0;
 }
 .headjumper.isVisible{
     visibility: visible;
+    opacity: 1;
 }
 .headjumper.lowOp {
     opacity: 0.35;
 }
 .headjumper.lowOp:hover{
     opacity: 1;
-    -webkit-transition: opacity 400ms linear;
-    -moz-transition: opacity 400ms linear;
-    -o-transition: opacity 400ms linear;
-    -ms-transition: opacity 400ms linear;
-    transition: opacity 400ms linear;
+}
+.headjumper,
+.headjumper.lowOp:hover,
+.headjumper.isVisible{
+    -webkit-transition: opacity .6s 0s, visibility .6s 0s;
+    -moz-transition: opacity .6s 0s, visibility .6s 0s;
+    -o-transition: opacity .6s 0s, visibility .6s 0s;
+    -ms-transition: opacity .6s 0s, visibility .6s 0s;
+    transition: opacity .6s 0s, visibility .6s 0s;
 }
 @media screen and ( max-width: 460px ) {
   a.headjumper {
