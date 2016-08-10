@@ -80,7 +80,7 @@ body {
     margin-left: auto;
     padding: 16px;
 }
-@media (max-width: 460px) {
+@media (max-width: 800px) {
     div.mittelsektion {
         flex-direction: column;
     }
@@ -183,10 +183,10 @@ nav.horizontal a:hover:not(.active) {
 
 
 
-/*Listenklassen---------------------------------------------------------------*/
+/*Galleryklassen---------------------------------------------------------------*/
 /*Die ganzen Block-Sachen mache ich, damit das mit dem fitting ans
 Parentelement funktioniert*/
-ul.gallery1 {
+div.gallery1 {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -198,10 +198,9 @@ ul.gallery1 {
     flex-wrap: wrap;
     margin: auto;
     padding: 0;
-    width: 100%;
     list-style-type: none;
 }
-ul.gallery1 li{
+div.gallery1 a{
     position: relative;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -209,11 +208,12 @@ ul.gallery1 li{
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    flex: 1 0 auto;
+    flex: 0 auto;
+    height: 300px;
     padding: 8px;
-    width: 25%;
+    max-width: 25%;
 }
-ul.gallery1 img{
+div.gallery1 img{
     position: relative;
     display: block;
     -moz-box-sizing: border-box;
@@ -228,7 +228,7 @@ ul.gallery1 img{
     -ms-transition: border-color .6s 0s;
     transition: border-color .6s 0s;
 }
-ul.gallery1 img:hover{
+div.gallery1 img:hover{
     border: 2px solid var(--farbe4);
     -webkit-transition: border-color .6s 0s;
     -moz-transition: border-color .6s 0s;
@@ -236,20 +236,22 @@ ul.gallery1 img:hover{
     -ms-transition: border-color .6s 0s;
     transition: border-color .6s 0s;
 }
+@media screen and ( max-width: 1366px ){
+    div.gallery1 a{
+        max-width: 33.333%;
+    }
+}
+@media screen and ( max-width: 1024px ){
+    div.gallery1 a{
+        max-width: 50%;
+    }
+}
 @media screen and ( max-width: 800px ){
-    ul.gallery1 li{
-        width: 33.333%;
+    div.gallery1 {
+        justify-content: center;
     }
-}
-@media screen and ( max-width: 640px ){
-    ul.gallery1 li{
-        width: 50%;
-    }
-}
-@media screen and ( max-width: 460px ){
-    ul.gallery1 li{
-        width: 100%;
-        float: none;
+    div.gallery1 a{
+        max-width: 100%;
     }
 }
 /*----------------------------------------------------------------------------*/
