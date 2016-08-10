@@ -198,6 +198,7 @@ div.gallery1 {
     flex-wrap: wrap;
     margin: auto;
     padding: 0;
+    justify-content: center;
     list-style-type: none;
 }
 div.gallery1 a{
@@ -211,7 +212,7 @@ div.gallery1 a{
     flex: 0 auto;
     height: 300px;
     padding: 8px;
-    max-width: 25%;
+    /*max-width: 25%;*/
 }
 div.gallery1 img{
     position: relative;
@@ -235,24 +236,6 @@ div.gallery1 img:hover{
     -o-transition: border-color .6s 0s;
     -ms-transition: border-color .6s 0s;
     transition: border-color .6s 0s;
-}
-@media screen and ( max-width: 1366px ){
-    div.gallery1 a{
-        max-width: 33.333%;
-    }
-}
-@media screen and ( max-width: 1024px ){
-    div.gallery1 a{
-        max-width: 50%;
-    }
-}
-@media screen and ( max-width: 800px ){
-    div.gallery1 {
-        justify-content: center;
-    }
-    div.gallery1 a{
-        max-width: 100%;
-    }
 }
 /*----------------------------------------------------------------------------*/
 
@@ -333,3 +316,34 @@ table.simpleTable td {
 }
 /******************************************************************************/
 /*############################################################################*/
+
+
+
+
+
+/*Artefakte*/
+
+/*Aus der Galleryentwicklungsphase
+
+
+@media screen and ( max-width: 1366px ){
+   div.gallery1 a{
+       max-width: 33.333%;
+   }
+}
+@media screen and ( max-width: 1024px ){
+   div.gallery1 a{
+       max-width: 50%;
+   }
+}
+@media screen and ( max-width: 800px ){
+   div.gallery1 {
+       justify-content: center;
+   }
++
+   div.gallery1 a{
+       max-width: 100%;
+   }
+}
+
+*/
