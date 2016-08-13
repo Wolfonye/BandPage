@@ -18,12 +18,21 @@
 /*############################################################################*/
 
 /*##############################Basislayout###################################*/
+@font-face {
+    font-family: montserrat;
+    src: url(../src/montserrat-regular-webfont.woff);
+}
+@font-face {
+    font-family: montserrat;
+    src: url(../src/montserrat-regular-webfont.woff);
+    font-weight: bold;
+}
+* {
+    box-sizing: border-box;
+    font-family: montserrat;
+}
 html { /*Scrollbar erzwingen um centering jump zu vermeiden*/
        overflow-y: scroll;
-}
-body > header:first-of-type {
-    box-sizing: border-box;
-    background-color: green;
 }
 nav {
     box-sizing: border-box;
@@ -40,7 +49,9 @@ div.mittelsektion {
 article {
     box-shadow: 0px 5px 9px 10px rgba(222,222,222,1);
     box-sizing: border-box;
-    padding: 16px;
+    padding-top: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
     flex-basis: 60%;
     background-color: var(--kontrastfarbeHell);
 }
@@ -92,16 +103,24 @@ body {
     margin-left: auto;
     padding: 16px;
 }
-@media (max-width: 800px) {
+@media (max-width: 960px) {
+    aside.left {
+        display: none;
+    }
+    article {
+        flex-basis: 70%;
+    }
+    aside.right {
+        flex-basis: 30%;
+    }
+}
+@media (max-width: 640px) {
     div.mittelsektion {
         flex-direction: column;
     }
     aside.right {
         margin-left: inherit;
         margin-top: auto;
-    }
-    aside.left {
-        display: none;
     }
 }
 /*----------------------------------------------------------------------------*/
@@ -110,10 +129,9 @@ body {
 
 /*###########################Spezialisierungen################################*/
 /*body------------------------------------------------------------------------*/
-body > header {
-    min-height: 20px;
+body > header:first-of-type {
+    min-height: 50px;
     max-height: 100px;
-    background-image: url("http://img.webme.com/pic/m/mek-testside/header5.jpg");
 }
 /*----------------------------------------------------------------------------*/
 
@@ -208,7 +226,10 @@ nav.horizontal a:hover:not(.active) {
 
 
 
-/*Galleryklassen---------------------------------------------------------------*/
+/*Galleryklassen--------------------------------------------------------------*/
+a {
+    outline: 0;
+}
 /*Die ganzen Block-Sachen mache ich, damit das mit dem fitting ans
 Parentelement funktioniert*/
 div.gallery1 {
@@ -235,7 +256,7 @@ div.gallery1 a{
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     flex: 0 auto;
-    height: 300px;
+    height: 250px;
     padding: 8px;
     /*max-width: 25%;*/
 }
@@ -289,6 +310,20 @@ table.simpleTable td {
     padding: 5px 7px;
     border-bottom: 1px solid var(--farbe4);
     border-right: 1px solid var(--farbe4);
+}
+/*----------------------------------------------------------------------------*/
+
+
+/*Visitenkarte/h-card---------------------------------------------------------*/
+.h-card {
+    border: 2px solid var(--hauptfarbeDunkel);
+    padding: 30px;
+    min-width: 30%;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 /*----------------------------------------------------------------------------*/
 
