@@ -2,12 +2,14 @@
 
 /*########################Variablendeklarationen##############################*/
 :root {
-    --farbe1: #004d00; /*Hauptfarbe DUNKEL*/
-    --farbe2: #00cc00; /*Haubtfarbe HELL*/
-    --farbe3: white;
+    --hauptfarbeDunkel: black; /*Hauptfarbe DUNKEL*/
+    --hauptfarbeHell: grey; /*Haubtfarbe HELL*/
+    --kontrastfarbeDunkel: rgb(84, 84, 84); /*Kontrastfarbe DUNKEL*/
+    --kontrastfarbeHalbdunkel: rgb(176, 176, 176); /*Kontrastfarbe HALBDUNKEL*/
+    --kontrastfarbeHell: white; /*Kontrastfarbe HELL*/
     --farbe4: black;
     --farbe5: grey;
-    --farbe6: lightgrey;
+    --farbe6: rgb(242, 242, 242);
     --smallFont: 8px;
     --normalFont: 12px;
     --largeFont: 16px;
@@ -22,7 +24,7 @@ body > header:first-of-type {
 }
 nav {
     box-sizing: border-box;
-    background-color: var(--farbe1);
+    background-color: var(--hauptfarbeDunkel);
     min-height: 30px;
 }
 div.mittelsektion {
@@ -33,13 +35,19 @@ div.mittelsektion {
     flex-direction: row;
 }
 article {
+    box-shadow: 0px 5px 9px 10px rgba(222,222,222,1);
     box-sizing: border-box;
+    padding: 16px;
     flex-grow: 1;
-    background-color: red;
+    max-width: 60%
+    background-color: var(--kontrastfarbeHell);
+}
+article h2 {
+    text-align: center;
 }
 aside {
     box-sizing: border-box;
-    background-color: yellow;
+    background-color: var(--farbe6);
 }
 aside.right {
     position: relative;
@@ -60,8 +68,10 @@ footer {
     justify-content: center;
     box-sizing: border-box;
     padding: 8px;
-    border-top: 1px solid var(--farbe4);
+    background-color: var(--farbe4);
+    color: var(--farbe5);
     margin-top: auto;
+    z-index: 30;
 }
 html {
     height: 100%;
@@ -88,6 +98,9 @@ body {
         margin-left: inherit;
         margin-top: auto;
     }
+    aside.left {
+        display: none;
+    }
 }
 /*----------------------------------------------------------------------------*/
 /*############################################################################*/
@@ -107,7 +120,7 @@ body > header {
 nav.horizontal {
     position: relative;
     z-index: 20;
-    background-color: var(--farbe1);
+    background-color: var(--kontrastfarbeDunkel);
     display: flex;
     width: 100%;
     flex-shrink: 0;
@@ -116,14 +129,20 @@ nav.horizontal {
 nav.horizontal a{
     position: relative;
     font-weight: bold;
-    color: var(--farbe2);
+    color: var(--kontrastfarbeHalbdunkel);
     text-align: center;
     padding: 16px;
-    border-right: 1px solid var(--farbe3);
     text-decoration: none;
+    background-color: var(--kontrastfarbeDunkel);
+    -webkit-transition: color 400ms linear, background-color 400ms linear;
+    -moz-transition: color 400ms linear, background-color 400ms linear;
+    -o-transition: color 400ms linear, background-color 400ms linear;
+    -ms-transition: color 400ms linear, background-color 400ms linear;
+    transition: color 400ms linear, background-color 400ms linear;
 }
 nav.horizontal a.active{
-    background-color: var(--farbe4);
+    background-color: var(--hauptfarbeDunkel);
+    color: var(--kontrastfarbeHell);
 }
 nav.horizontal a:last-child {
     margin-left: auto;
@@ -142,30 +161,34 @@ nav.horizontal a.active::after {
     margin-left: -7px;
     border-width: 7px;
     border-style: solid;
-    border-color: var(--farbe4) transparent transparent transparent;
+    border-color: var(--hauptfarbeDunkel) transparent transparent transparent;
 }
 nav.horizontal a:hover:not(.active) {
-    background-color: var(--farbe2);
-    color: var(--farbe1);
-    -webkit-transition: background-color 400ms linear;
-    -moz-transition: background-color 400ms linear;
-    -o-transition: background-color 400ms linear;
-    -ms-transition: background-color 400ms linear;
-    transition: background-color 400ms linear;
+    background-color: var(--hauptfarbeDunkel);
+    color: var(--kontrastfarbeHell);
+    -webkit-transition: color 400ms linear, background-color 400ms linear;
+    -moz-transition: color 400ms linear, background-color 400ms linear;
+    -o-transition: color 400ms linear, background-color 400ms linear;
+    -ms-transition: color 400ms linear, background-color 400ms linear;
+    transition: color 400ms linear, background-color 400ms linear;
 }
 @media (max-width:460px){
     nav.horizontal {
         flex-direction: column;
-        background-color: var(--farbe1);
+        background-color: var(--hauptfarbeDunkel);
     }
     nav.horizontal a {
 	    padding: 5px 12px;
         border-right: none;
-        border-bottom: 1px solid var(--farbe3);
+        border-bottom: 1px solid var(--kontrastfarbeHell);
     }
     nav.horizontal a:last-child {
         margin-left: inherit;
         border-bottom: none;
+    }
+    nav.horizontal a.active {
+        border-left: none;
+        border-right: none;
     }
     nav.horizontal a.active::after {
         content: none;
@@ -176,7 +199,7 @@ nav.horizontal a:hover:not(.active) {
         margin-left: -7px;
         border-width: 7px;
         border-style: solid;
-        border-color: transparent transparent var(--farbe1) transparent;*/
+        border-color: transparent transparent var(--hauptfarbeDunkel) transparent;*/
     }
 }
 /*----------------------------------------------------------------------------*/
@@ -223,19 +246,20 @@ div.gallery1 img{
     border: 2px solid var(--farbe5);
     width: 100%;
     height: 100%;
-    -webkit-transition: border-color .6s 0s;
-    -moz-transition: border-color .6s 0s;
-    -o-transition: border-color .6s 0s;
-    -ms-transition: border-color .6s 0s;
-    transition: border-color .6s 0s;
+    -webkit-transition: border-color .6s 0s, box-shadow 400ms linear;
+    -moz-transition: border-color .6s, box-shadow 400ms linear;
+    -o-transition: border-color .6s 0s, box-shadow 400ms linear;
+    -ms-transition: border-color .6s 0s, box-shadow 400ms linear;
+    transition: border-color .6s 0s, box-shadow 400ms linear;
 }
 div.gallery1 img:hover{
     border: 2px solid var(--farbe4);
-    -webkit-transition: border-color .6s 0s;
-    -moz-transition: border-color .6s 0s;
-    -o-transition: border-color .6s 0s;
-    -ms-transition: border-color .6s 0s;
-    transition: border-color .6s 0s;
+    box-shadow: 0px 0px 8px 6px rgba(212,212,212,0.6);
+    -webkit-transition: border-color .6s 0s, box-shadow 400ms linear;
+    -moz-transition: border-color .6s, box-shadow 400ms linear;
+    -o-transition: border-color .6s 0s, box-shadow 400ms linear;
+    -ms-transition: border-color .6s 0s, box-shadow 400ms linear;
+    transition: border-color .6s 0s, box-shadow 400ms linear;
 }
 /*----------------------------------------------------------------------------*/
 
@@ -273,6 +297,7 @@ table.simpleTable td {
 }
 .headjumper {
     position: fixed;
+    z-index: 31;
     bottom: 0;
     visibility: hidden;
     opacity: 0;
@@ -281,7 +306,7 @@ table.simpleTable td {
     text-decoration: none;
     text-align: center;
     background-color: var(--farbe4);
-    color: var(--farbe3);
+    color: var(--kontrastfarbeHell);
     border-left: 3px solid var(--farbe4);
     border-right: 3px solid var(--farbe4);
     border-top: 3px solid var(--farbe4);
