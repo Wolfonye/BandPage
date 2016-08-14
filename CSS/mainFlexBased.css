@@ -115,7 +115,7 @@ body {
     margin-left: auto;
     padding: 16px;
 }
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
     aside.left {
         display: none;
     }
@@ -329,11 +329,10 @@ table.simpleTable td {
 
 /*Visitenkarte/h-card---------------------------------------------------------*/
 .h-card {
-    padding: 30px;
+    overflow: auto;
+    padding: 30px 60px;
     border: 5px dotted var(--hauptfarbeHell);
     border-radius: 4px;
-    min-width: 30%;
-    max-width: 45%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
@@ -350,12 +349,61 @@ table.simpleTable td {
 .hcard ,.u-email,.p-tel,.p-street-adress,.p-postal-code,.u-url {
     padding-left: 40px;
 }
+@media (max-width: 1024px) {
+    .h-card {
+        min-width: 30%;
+        max-width: 90%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding: 20px;
+    }
+    .h-card .p-name {
+        display: inline-block;
+        width: 99%;
+        text-align: left;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    .hcard ,.u-email,.p-tel,.p-street-adress,.p-postal-code,.u-url {
+        padding-left: 7px;
+    }
+}
+@media (max-width: 640px) {
+    .h-card {
+        padding: 7px;
+        font-size: 14px;
+        max-width: 100%;
+    }
+    /*Im folgenden gehts darum, dass Mailadresse und homepage nen linebreak machen*/
+    .h-card ,.u-email,.u-url {
+        /* These are technically the same, but use both */
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        -ms-word-break: break-all;
+        /* This is the dangerous one in WebKit, as it breaks things wherever */
+        word-break: break-all;
+        /* Instead use this non-standard one: */
+        word-break: break-word;
+
+        /* Adds a hyphen where the word breaks, if supported (No Blink) */
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
+}
 /*----------------------------------------------------------------------------*/
 
 
 /*****************************Verschiedenes************************************/
 .cleared {
     clear: both;
+}
+.centercontent {
+    display: flex;
+    justify-content: center;
 }
 .headjumper {
     position: fixed;
