@@ -1,9 +1,9 @@
-/*-------------ZULETZT GEÄNDERT AM 07.08.2016---------------------------------*/
+/*-------------ZULETZT GEÄNDERT AM 14.08.2016---------------------------------*/
 
 /*########################Variablendeklarationen##############################*/
 :root {
     --hauptfarbeDunkel: black; /*Hauptfarbe DUNKEL*/
-    --hauptfarbeHell: grey; /*Haubtfarbe HELL*/
+    --hauptfarbeHell: rgb(189, 189, 189); /*Haubtfarbe HELL*/
     --kontrastfarbeDunkel: rgb(84, 84, 84); /*Kontrastfarbe DUNKEL*/
     --kontrastfarbeHalbdunkel: rgb(176, 176, 176); /*Kontrastfarbe HALBDUNKEL*/
     --kontrastfarbeHell: white; /*Kontrastfarbe HELL*/
@@ -16,6 +16,7 @@
     --veryLargeFont: 24px;
 }
 /*############################################################################*/
+
 
 /*##############################Basislayout###################################*/
 @font-face {
@@ -255,6 +256,7 @@ div.gallery1 {
     flex-wrap: wrap;
     margin: auto;
     padding: 0;
+    padding-bottom: 50px;
     justify-content: center;
     list-style-type: none;
 }
@@ -277,7 +279,7 @@ div.gallery1 img{
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    border: 2px solid var(--farbe5);
+    border: 2px solid var(--hauptfarbeHell);
     width: 100%;
     height: 100%;
     -webkit-transition: border-color .6s 0s, box-shadow 400ms linear;
@@ -287,7 +289,7 @@ div.gallery1 img{
     transition: border-color .6s 0s, box-shadow 400ms linear;
 }
 div.gallery1 img:hover{
-    border: 2px solid var(--farbe4);
+    border: 2px solid var(--hauptfarbeDunkel);
     box-shadow: 0px 0px 8px 6px rgba(212,212,212,0.6);
     -webkit-transition: border-color .6s 0s, box-shadow 400ms linear;
     -moz-transition: border-color .6s, box-shadow 400ms linear;
@@ -327,14 +329,26 @@ table.simpleTable td {
 
 /*Visitenkarte/h-card---------------------------------------------------------*/
 .h-card {
-    border: 2px solid var(--hauptfarbeDunkel);
     padding: 30px;
+    border: 5px dotted var(--hauptfarbeHell);
+    border-radius: 4px;
     min-width: 30%;
-    max-width: 50%;
+    max-width: 45%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.h-card .p-name {
+    display: inline-block;
+    width: 99%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.hcard ,.u-email,.p-tel,.p-street-adress,.p-postal-code,.u-url {
+    padding-left: 40px;
 }
 /*----------------------------------------------------------------------------*/
 
