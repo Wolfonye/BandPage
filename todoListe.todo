@@ -7,6 +7,8 @@ CSS-bezogenes:
 ✔ h-card stylen @done(2016-08-14 14:29)
 ✔ responsivness für h-card hinzufügen @done(2016-08-14 18:08)
 ✔ Käthe fragen, was sie von der linebreaksache im h-card hält @done(2016-08-14 22:10)
+✔ Gallery anpassen, bilder scalen nicht schön bei sehr kleiner Bildschrimbreite @done(2016-08-15 14:53)
+☐ unnötige boder-box sizings entfernen (redundante)
 
 
 HTML-bezogenes:

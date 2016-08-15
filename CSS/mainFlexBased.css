@@ -121,6 +121,7 @@ body {
     }
     article {
         flex-basis: 70%;
+        padding: 10px;
     }
     aside.right {
         flex-basis: 30%;
@@ -271,7 +272,6 @@ div.gallery1 a{
     flex: 0 auto;
     height: 250px;
     padding: 8px;
-    /*max-width: 25%;*/
 }
 div.gallery1 img{
     position: relative;
@@ -280,8 +280,8 @@ div.gallery1 img{
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border: 2px solid var(--hauptfarbeHell);
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     -webkit-transition: border-color .6s 0s, box-shadow 400ms linear;
     -moz-transition: border-color .6s, box-shadow 400ms linear;
     -o-transition: border-color .6s 0s, box-shadow 400ms linear;
@@ -296,6 +296,36 @@ div.gallery1 img:hover{
     -o-transition: border-color .6s 0s, box-shadow 400ms linear;
     -ms-transition: border-color .6s 0s, box-shadow 400ms linear;
     transition: border-color .6s 0s, box-shadow 400ms linear;
+}
+@media (max-width: 640px) {
+    div.gallery1 {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        padding: 0;
+        padding-bottom: 50px;
+    }
+    div.gallery1 a{
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: block;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        height: auto;
+        padding: 14px;
+    }
+    div.gallery1 img{
+        position: relative;
+        display: block;
+    }
 }
 /*----------------------------------------------------------------------------*/
 
