@@ -9,9 +9,13 @@ CSS-bezogenes:
 ✔ Käthe fragen, was sie von der linebreaksache im h-card hält @done(2016-08-14 22:10)
 ✔ Gallery anpassen, bilder scalen nicht schön bei sehr kleiner Bildschrimbreite @done(2016-08-15 14:53)
 ☐ unnötige boder-box sizings entfernen (redundante)
+✔ Gästebucheinträge-Styling @done(2016-08-17 11:18)
 
 
 HTML-bezogenes:
 ✔ Liedliste erweitern @done(2016-08-14 22:46)
 ☐ Mainpage-Content korrigieren und ausbauen
 ☐ Brinna nach Logo fragen
+
+Java-Scriptbezogenes:
+☐ Gästebuchscript
