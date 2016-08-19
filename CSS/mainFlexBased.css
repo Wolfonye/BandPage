@@ -116,7 +116,7 @@ body {
     margin-left: auto;
     padding: 16px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1300px) {
     aside.left {
         display: none;
     }
@@ -397,7 +397,7 @@ table.simpleTable td {
 .hcard ,.u-email,.p-tel,.p-street-adress,.p-postal-code,.u-url {
     padding-left: 40px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1300px) {
     .h-card {
         min-width: 30%;
         max-width: 90%;
@@ -531,6 +531,11 @@ form.gaestebuch1 button:hover span {
 form.gaestebuch1 button:hover span:after {
   opacity: 1;
   right: 0;
+}
+@media (max-width: 1300px) {
+    form.gaestebuch1 {
+        width: 400px;
+    }
 }
 /*----------------------------------------------------------------------------*/
 
