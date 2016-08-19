@@ -239,24 +239,6 @@ nav.horizontal a:hover:not(.active) {
 /*----------------------------------------------------------------------------*/
 
 
-/*Gästebucheinträgeklassen----------------------------------------------------*/
-div.gaestebucheintrag {
-    border-bottom: 2px solid var(--hauptfarbeHellMidOp);
-    padding: 15px;
-    margin: 15px;
-    max-width: 600px;
-}
-div.gaestebucheintrag .gastname {
-    font-weight: bold;
-}
-div.gaestebucheintrag .gastdatum {
-    display: inline-block;
-    font-style: italic;
-    float: right;
-}
-/*----------------------------------------------------------------------------*/
-
-
 /*Galleryklassen--------------------------------------------------------------*/
 a {
     outline: 0;
@@ -445,36 +427,40 @@ table.simpleTable td {
 /*----------------------------------------------------------------------------*/
 
 
+
+/*Gästebucheinträgeklassen----------------------------------------------------*/
+div.gaestebucheintrag {
+    border-bottom: 2px solid var(--hauptfarbeHellMidOp);
+    padding: 15px;
+    margin: 15px;
+    max-width: 600px;
+}
+div.gaestebucheintrag:first-of-type {
+    margin-top: 40px;
+    border-top: 2px solid var(--hauptfarbeHellMidOp);
+}
+div.gaestebucheintrag .gastname {
+    font-weight: bold;
+}
+div.gaestebucheintrag .gastdatum {
+    display: inline-block;
+    font-style: italic;
+    float: right;
+}
+/*----------------------------------------------------------------------------*/
+
+
 /*Gästebuchform-Styling-------------------------------------------------------*/
 form.gaestebuch1 {
-    z-index: 40;
-    opacity: 0.42;
-    position: fixed;
-    left: 50%;
-    height: 430px;
-    bottom: -365px;
-    margin-left: -300px;
-    width: 600px;
-    background-color: var(--hauptfarbeDunkel);
-    color: var(--kontrastfarbeHell);
-    padding: 20px;
-    border-top-right-radius: 7px;
-    border-top-left-radius: 7px;
-    -webkit-transition: opacity .6s 0s, bottom 400ms linear;
-    -moz-transition: opacity .6s 0s, bottom 400ms linear;
-    -o-transition: opacity .6s 0s, bottom 400ms linear;
-    -ms-transition: opacity .6s 0s, bottom 400ms linear;
-    transition: opacity .6s 0s, bottom 400ms linear;
-}
-form.gaestebuch1:hover {
-    opacity: 1;
-    bottom: 0;
-    z-index: 28;
-    -webkit-transition: opacity .6s 0s, bottom 400ms linear;
-    -moz-transition: opacity .6s 0s, bottom 400ms linear;
-    -o-transition: opacity .6s 0s, bottom 400ms linear;
-    -ms-transition: opacity .6s 0s, bottom 400ms linear;
-    transition: opacity .6s 0s, bottom 400ms linear;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 30px;
+    width: 95%;
+    max-width: 600px;
+    background-color: var(--hauptfarbeHellMidOp);
+    color: var(--kontrastfarbeDunkel);
+    border-radius: 7px;
+    padding: 15px 20px;
 }
 
 form.gaestebuch1 fieldset {
@@ -486,6 +472,8 @@ form.gaestebuch1 legend {
     font-size: 18px;
 }
 form.gaestebuch1 input[type=text],textarea {
+    border: none;
+    padding: 10px;
     margin-top: 7px;
     margin-bottom: 16px;
     width: 100%;
@@ -497,8 +485,8 @@ form.gaestebuch1 textarea {
 form.gaestebuch1 button {
   display: inline-block;
   border-radius: 7px;
-  background-color: var(--kontrastfarbeDunkel);
   border: none;
+  background-color: var(--kontrastfarbeDunkel);
   color: var(--kontrastfarbeHell);
   text-align: center;
   font-size: 18px;
@@ -532,9 +520,33 @@ form.gaestebuch1 button:hover span:after {
   opacity: 1;
   right: 0;
 }
-@media (max-width: 1300px) {
+@media screen and ( max-width: 460px ) {
     form.gaestebuch1 {
-        width: 400px;
+        font-size: 10px;
+        margin-top: 20px;
+        border-radius: 7px;
+        padding: 10px 15px;
+    }
+    form.gaestebuch1 legend {
+        overflow: hidden;
+        width: 100%;
+        text-align: center;
+        font-size: 13px;
+    }
+    form.gaestebuch1 input[type=text],textarea {
+        overflow: auto;
+        padding: 7px;
+        margin-top: 7px;
+        margin-bottom: 13px;
+    }
+    form.gaestebuch1 button {
+        overflow: auto;
+      background-color: var(--kontrastfarbeDunkel);
+      color: var(--kontrastfarbeHell);
+      text-align: center;
+      font-size: 13px;
+      padding: 12px 16px;
+      width: 160px;
     }
 }
 /*----------------------------------------------------------------------------*/
