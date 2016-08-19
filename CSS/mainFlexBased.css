@@ -445,6 +445,96 @@ table.simpleTable td {
 /*----------------------------------------------------------------------------*/
 
 
+/*Gästebuchform-Styling-------------------------------------------------------*/
+form.gaestebuch1 {
+    z-index: 40;
+    opacity: 0.42;
+    position: fixed;
+    left: 50%;
+    height: 430px;
+    bottom: -365px;
+    margin-left: -300px;
+    width: 600px;
+    background-color: var(--hauptfarbeDunkel);
+    color: var(--kontrastfarbeHell);
+    padding: 20px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    -webkit-transition: opacity .6s 0s, bottom 400ms linear;
+    -moz-transition: opacity .6s 0s, bottom 400ms linear;
+    -o-transition: opacity .6s 0s, bottom 400ms linear;
+    -ms-transition: opacity .6s 0s, bottom 400ms linear;
+    transition: opacity .6s 0s, bottom 400ms linear;
+}
+form.gaestebuch1:hover {
+    opacity: 1;
+    bottom: 0;
+    z-index: 28;
+    -webkit-transition: opacity .6s 0s, bottom 400ms linear;
+    -moz-transition: opacity .6s 0s, bottom 400ms linear;
+    -o-transition: opacity .6s 0s, bottom 400ms linear;
+    -ms-transition: opacity .6s 0s, bottom 400ms linear;
+    transition: opacity .6s 0s, bottom 400ms linear;
+}
+
+form.gaestebuch1 fieldset {
+    border: none;
+}
+form.gaestebuch1 legend {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+form.gaestebuch1 input[type=text],textarea {
+    margin-top: 7px;
+    margin-bottom: 16px;
+    width: 100%;
+    resize: none;
+}
+form.gaestebuch1 textarea {
+    min-height: 150px;
+}
+form.gaestebuch1 button {
+  display: inline-block;
+  border-radius: 7px;
+  background-color: var(--kontrastfarbeDunkel);
+  border: none;
+  color: var(--kontrastfarbeHell);
+  text-align: center;
+  font-size: 18px;
+  padding: 15px 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+form.gaestebuch1 button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+form.gaestebuch1 button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+form.gaestebuch1 button:hover span {
+  padding-right: 25px;
+}
+
+form.gaestebuch1 button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/*----------------------------------------------------------------------------*/
+
+
 /*****************************Verschiedenes************************************/
 .cleared {
     clear: both;

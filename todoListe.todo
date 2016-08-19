@@ -10,12 +10,17 @@ CSS-bezogenes:
 ✔ Gallery anpassen, bilder scalen nicht schön bei sehr kleiner Bildschrimbreite @done(2016-08-15 14:53)
 ☐ unnötige boder-box sizings entfernen (redundante)
 ✔ Gästebucheinträge-Styling @done(2016-08-17 11:18)
+✔ Formstyling für Gästebucheinträge @done(2016-08-19 12:16)
+☐ Styling der Texteingaben in Form
+
 
 
 HTML-bezogenes:
 ✔ Liedliste erweitern @done(2016-08-14 22:46)
 ☐ Mainpage-Content korrigieren und ausbauen
 ☐ Brinna nach Logo fragen
+✔ Form für Gästebucheinträge einfügen @done(2016-08-19 12:17)
 
 Java-Scriptbezogenes:
 ☐ Gästebuchscript
+☐ hinzufügen von Skript für hübscheres docken im unteren Bereich für Form
