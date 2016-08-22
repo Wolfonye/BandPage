@@ -10,6 +10,7 @@
         <meta name="format-detection" content="telephone=yes"/> <!--automatische anklickbarkeit von telefonnummern zum dialing auf handies-->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>  <!--JQueryBibliothek online laden, is prakfischer-->
         <script src="Scripts/backToTopScroll.js" async></script>
+        <script src="Scripts/gaestebucheintragErzeugen.js" async></script>
         <link rel="stylesheet" href="CSS/mainFlexBased.css"/>
         <!--Favicon einfügen-->
         <title>Tierische Band-Gästebuch</title>
@@ -34,20 +35,19 @@
                     <h2>Gästebuch</h2>
                 </header>
                 <div class="centercontent">
-                    <form class="gaestebuch1">
+                    <form class="gaestebuch1" id="gaestebuchform">
                         <fieldset>
                             <legend>Gästebucheintrag verfassen</legend><br/>
                             Name:<br/>
-                            <input type="text" name="name" placeholder="Name eingeben..."><br/>
+                            <input id="namensfeld" type="text" name="name" placeholder="Name eingeben..."><br/>
                             Text:<br/>
                             <!--Ein kleiner Kommentar: der Placeholder funktioniert nur, wenn das schließende Tag der Textarea nicht in der nächsten Zeile ist, weil dort sonst content gesehen wird-->
-                            <textarea name="textfeld" placeholder="Text eingeben..."></textarea><br/>
-
-                            <button type="button" name="absendeButton"><span>Abschicken </span></button>
+                            <textarea id="textfeld" name="textfeld" placeholder="Text eingeben..."></textarea><br/>
+                            <button type="button" name="absendeButton" onclick="gaestebucheintragHinzufuegen()"><span>Abschicken </span></button>
                         </fieldset>
                     </form>
                     <div class="gaestebucheintrag">
-                        <span class="gastname">Käthe </span>schrieb:
+                        <span class="gastname" id="kat">Käthe </span>schrieb:
                         <p class="gasttext">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                             sed do eiusmod tempor incididunt ut labore et dolore magna
