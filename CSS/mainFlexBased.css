@@ -47,7 +47,7 @@ h2, h1 {
     font-weight: bold;
 }
 html { /*Scrollbar erzwingen um centering jump zu vermeiden*/
-       overflow-y: scroll;
+    overflow-y: scroll;
 }
 nav {
     background-color: var(--hauptfarbeDunkel);
