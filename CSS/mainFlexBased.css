@@ -38,6 +38,8 @@
     src: url(../src/31DEE0_1_0.woff2);
 }
 * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     font-family: museoS;
 }
@@ -48,20 +50,17 @@ html { /*Scrollbar erzwingen um centering jump zu vermeiden*/
        overflow-y: scroll;
 }
 nav {
-    box-sizing: border-box;
     background-color: var(--hauptfarbeDunkel);
     min-height: 30px;
 }
 div.mittelsektion {
     display: flex;
     position: relative;
-    box-sizing: border-box;
     flex-grow: 1;
     flex-direction: row;
 }
 article {
     box-shadow: 0px 5px 9px 10px rgba(222,222,222,1);
-    box-sizing: border-box;
     padding-top: 25px;
     padding-left: 50px;
     padding-right: 50px;
@@ -72,7 +71,6 @@ article h2 {
     text-align: center;
 }
 aside {
-    box-sizing: border-box;
     background-color: var(--farbe6);
 }
 aside.right {
@@ -92,7 +90,6 @@ aside.left {
 footer {
     display: flex;
     justify-content: center;
-    box-sizing: border-box;
     padding: 8px;
     background-color: var(--farbe4);
     color: var(--farbe5);
@@ -249,9 +246,6 @@ div.gallery1 {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -266,9 +260,6 @@ div.gallery1 a{
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
     flex: 0 auto;
     height: 250px;
     padding: 8px;
@@ -276,9 +267,6 @@ div.gallery1 a{
 div.gallery1 img{
     position: relative;
     display: block;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
     border: 2px solid var(--hauptfarbeHell);
     max-width: 100%;
     max-height: 100%;
@@ -302,9 +290,6 @@ div.gallery1 img:hover{
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
         justify-content: center;
         flex-direction: column;
         align-items: center;
@@ -316,9 +301,6 @@ div.gallery1 img:hover{
         display: -webkit-flex;
         display: -ms-flexbox;
         display: block;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
         height: auto;
         padding: 14px;
     }
@@ -541,12 +523,12 @@ form.gaestebuch1 button:hover span:after {
     }
     form.gaestebuch1 button {
         overflow: auto;
-      background-color: var(--kontrastfarbeDunkel);
-      color: var(--kontrastfarbeHell);
-      text-align: center;
-      font-size: 13px;
-      padding: 12px 16px;
-      width: 160px;
+        background-color: var(--kontrastfarbeDunkel);
+        color: var(--kontrastfarbeHell);
+        text-align: center;
+        font-size: 13px;
+        padding: 12px 16px;
+        width: 160px;
     }
 }
 /*----------------------------------------------------------------------------*/

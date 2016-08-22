@@ -8,7 +8,7 @@ CSS-bezogenes:
 ✔ responsivness für h-card hinzufügen @done(2016-08-14 18:08)
 ✔ Käthe fragen, was sie von der linebreaksache im h-card hält @done(2016-08-14 22:10)
 ✔ Gallery anpassen, bilder scalen nicht schön bei sehr kleiner Bildschrimbreite @done(2016-08-15 14:53)
-☐ unnötige boder-box sizings entfernen (redundante)
+✔ unnötige boder-box sizings entfernen (redundante) @done(2016-08-22 12:25)
 ✔ Gästebucheinträge-Styling @done(2016-08-17 11:18)
 ✔ Formstyling für Gästebucheinträge @done(2016-08-19 12:16)
 ☐ Styling der Texteingaben in Form
@@ -24,4 +24,4 @@ HTML-bezogenes:
 
 Java-Scriptbezogenes:
 ☐ Gästebuchscript
-☐ hinzufügen von Skript für hübscheres docken im unteren Bereich für Form
+✔ hinzufügen von Skript für hübscheres docken im unteren Bereich für Form @done(2016-08-22 12:20) (verworfen aus Designgründen)
