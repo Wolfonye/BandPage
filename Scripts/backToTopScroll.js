@@ -2,7 +2,7 @@
 
 /*das Folgende ist ein Ansatz, der das Fading über das adden und removen von CSS-Klassen regelt.
 Etwas weniger clean als das obere, aber der Effekt ist smoother so; evtl wär es auch mit obigem Ansatz schöner
-gegangen, aber dafür fehlt mir noch das Wissen...ru*/
+gegangen, aber dafür fehlt mir noch das Wissen...ru (was heißt denn hier "oben"? 20.12.16)*/
 $(document).ready(function(){
     var scrollDauer = 600,
         opVerringerungNach = 350,
